@@ -1,0 +1,18 @@
+{
+    "service":
+    {
+        "name": "ZeonService",
+        "port": 8000,
+        "tags": ["zeon"],
+
+        "check":
+        {
+            "id": "zeon_service_tcp_check",
+            "name": "zeon service tcp check",
+            "tcp": "localhost:8090",
+            "interval": "5s",
+            "timeout": "7s"
+        }
+    }
+}
+

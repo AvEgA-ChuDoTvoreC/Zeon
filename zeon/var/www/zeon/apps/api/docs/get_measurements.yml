@@ -1,0 +1,26 @@
+consumes:
+  - text/plain
+
+tags:
+  - api-sensors
+
+parameters:
+  - in: query
+    name: data
+    required: True
+  - in: path
+    name: example
+    description: Expected string with searching keys, splited by ','
+    schema:
+      type: string
+      example: "воля, победа, честь"
+
+responses:
+  201:
+    description: OK
+    schema:
+      $ref: '#/definitions/MeasurementsSchema'
+  400:
+    description: BAD REQUEST
+    schema:
+      $ref: '#/definitions/ResponseFormat'

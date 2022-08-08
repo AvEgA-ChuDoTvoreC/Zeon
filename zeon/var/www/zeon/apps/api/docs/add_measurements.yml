@@ -1,0 +1,46 @@
+consumes:
+  - application/json
+
+tags:
+  - api-sensors
+
+parameters:
+  - in: body
+    name: body
+    description: Add list of measurements
+    required: True
+    schema:
+      $ref: '#/definitions/AdaptersDataSchema'
+  - in: body
+    name: example
+    schema:
+      type: json
+      example: {
+        "measurements": [
+          {
+            "data": {
+              "msg": "msg",
+              "state": 1,
+              "status": 8
+            },
+            "subsystem": "subsystem"
+          }
+        ],
+        "system": "system"
+      }
+
+definitions:
+  ResponseFormat:
+    type: object
+    properties:
+      status:
+        type: string
+        example: "Response result!"
+
+responses:
+  201:
+    description: OK
+    schema:
+      $ref: '#/definitions/ResponseFormat'
+  400:
+    description: BAD REQUEST
