@@ -1,14 +1,33 @@
 # Zeon
 
-Flask-проект для коммуникации датчиков с Zabbix. Swagger документация на API имеется.
+[![Python](https://img.shields.io/badge/python-v3.5.3-blue?logo=python)](https://www.python.org/downloads/release/python-353/)
+[![Flask](https://img.shields.io/badge/flask-v1.1.4-blue?logo=flask)](https://flask.palletsprojects.com/en/1.1.x/)
+[![Docker](https://img.shields.io/badge/docker-20.10.16-blue?logo=docker)](https://docs.docker.com/get-docker/)
+
+[![Apache2](https://img.shields.io/badge/apache2--orange?logo=apache)](https://httpd.apache.org/)
+[![Consul](https://img.shields.io/badge/consul--orange?logo=consul)](https://www.consul.io/)
+
+<b>Zeon</b> - Flask-проект для коммуникации датчиков с Zabbix. Swagger документация на API имеется.
 
 Иерархия папок проекта подразумевает сборку в DEB-пакет и запуск его под web-сервером Apache2, 
 а также регистрацию в Consul. Конфиги в соответствующих местах, согласно Debian File System.
 
+### Быстрый старт
+```bash
+$ python3 -m venv venv
+$ source venv/bin/activate
+$ pip install -r requirements.txt
+$ cd zeon/var/www/zeon
+$ export FLASK_APP=run.py
+$ flask db init
+$ flask db migrate
+$ flask db upgrade
+$ python run.py
+```
+
 ## Инструкция для запуска приложения
 
 ### Создание и активация виртуального окружения (опционально)
-
 ```bash
 $ python3 -m venv <название виртуального окружения>
 $ source <название виртуального окружения>/bin/activate
@@ -160,5 +179,5 @@ $ pip install setuptools==40.9.0
 ```
 
 ```dotenv
-
+END
 ```
